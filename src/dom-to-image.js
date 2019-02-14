@@ -161,9 +161,9 @@
 
         function newCanvas(domNode) {
             var canvas = document.createElement('canvas');
-            canvas.width = options.width || util.width(domNode);
-            canvas.height = options.height || util.height(domNode);
-
+            canvas.width = (options.width*2) || util.width(domNode);
+            canvas.height = (options.height*2) || util.height(domNode);
+            canvas.getContext('2d').scale(2, 2)
             if (options.bgcolor) {
                 var ctx = canvas.getContext('2d');
                 ctx.fillStyle = options.bgcolor;
